@@ -1,5 +1,13 @@
 [
   {
+    "tag_name": "v1.0.6",
+    "name": "v1.0.6",
+    "body": "Docker image:\n\n`ghcr.io/like5-ux/new-api:v1.0.6`\n\nPull the new image and recreate the container to update.",
+    "published_at": "2026-10-29T21:34:31.507Z",
+    "prerelease": false,
+    "draft": false
+  },
+  {
     "tag_name": "v1.0.5",
     "name": "v1.0.5",
     "body": "## 修复内容\n\n- 完成前端 lint 清单审查：154 条 error 修复为 0，保留 63 条非阻断写法建议；未关闭检查规则。\n- 自定义页脚复用现有 HTML 过滤组件，过滤脚本、事件属性及危险链接，保留普通样式、链接和项目署名。\n- 加固聊天预设与网页预览的 iframe 隔离；为依赖浏览器来源权限的第三方聊天提供独立打开入口。\n- 修复附件读取失败时的未处理异常，以及添加附件时已有 blob URL 被提前释放的问题；失败可重试，等待期间的新输入得以保留。\n- 整理类型导入、条件分支和列表 key；在 PR CI 和镜像发布验证中加入全仓 lint 门禁。\n\n## 验证\n\n- 全仓 lint：0 error，63 warning，退出码 0。\n- 类型检查（1,450 文件）、生产构建及变更文件格式检查通过。\n- 全量前端测试：2600 项通过，1 项达到原有 20 秒超时；该文件单独复测 36 项全部通过，未修改超时配置。\n- 新增页脚过滤、iframe 隔离、附件失败重试、URL 生命周期和列表身份回归。\n\n## 使用镜像\n\n```text\nghcr.io/like5-ux/new-api:v1.0.5\nghcr.io/like5-ux/new-api:latest\n```\n\n镜像支持 linux/amd64 与 linux/arm64。部署时拉取新镜像并重建容器。自定义页脚中的可执行脚本和事件属性会被过滤；需要 localStorage 或来源权限的聊天客户端可通过独立窗口打开。\n",
