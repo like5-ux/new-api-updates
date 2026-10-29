@@ -1,0 +1,50 @@
+[
+  {
+    "tag_name": "v1.0.5",
+    "name": "v1.0.5",
+    "body": "## 修复内容\n\n- 完成前端 lint 清单审查：154 条 error 修复为 0，保留 63 条非阻断写法建议；未关闭检查规则。\n- 自定义页脚复用现有 HTML 过滤组件，过滤脚本、事件属性及危险链接，保留普通样式、链接和项目署名。\n- 加固聊天预设与网页预览的 iframe 隔离；为依赖浏览器来源权限的第三方聊天提供独立打开入口。\n- 修复附件读取失败时的未处理异常，以及添加附件时已有 blob URL 被提前释放的问题；失败可重试，等待期间的新输入得以保留。\n- 整理类型导入、条件分支和列表 key；在 PR CI 和镜像发布验证中加入全仓 lint 门禁。\n\n## 验证\n\n- 全仓 lint：0 error，63 warning，退出码 0。\n- 类型检查（1,450 文件）、生产构建及变更文件格式检查通过。\n- 全量前端测试：2600 项通过，1 项达到原有 20 秒超时；该文件单独复测 36 项全部通过，未修改超时配置。\n- 新增页脚过滤、iframe 隔离、附件失败重试、URL 生命周期和列表身份回归。\n\n## 使用镜像\n\n```text\nghcr.io/like5-ux/new-api:v1.0.5\nghcr.io/like5-ux/new-api:latest\n```\n\n镜像支持 linux/amd64 与 linux/arm64。部署时拉取新镜像并重建容器。自定义页脚中的可执行脚本和事件属性会被过滤；需要 localStorage 或来源权限的聊天客户端可通过独立窗口打开。\n",
+    "published_at": "2026-10-29T19:32:36Z",
+    "prerelease": false,
+    "draft": false
+  },
+  {
+    "tag_name": "v1.0.4",
+    "name": "v1.0.4",
+    "body": "## 版本内容\n\n- 同步 QuantumNous/new-api 上游 main 的 14 个提交，并合入 dev 的二开与修复。\n- 统一普通 API 调用及下游转发的公开模型名称，使用 Root 配置的“用户上游与响应模型名称”；过滤上游供应商错误诊断和来源响应头，Root 管理端保留排障信息。\n- 保留渠道文件夹与拖动排序、模型监控、仪表盘、公告和移动端布局等二开功能。\n- 合入上游流式结束标记、Azure Responses WebSocket、Cloudflare embedding、渠道亲和性重试和即时任务监控等修复。\n- 限制原作者 Docker Hub 工作流只在原作者仓库执行，本仓库通过 GHCR 发布镜像。\n\n## 镜像\n\n```text\nghcr.io/like5-ux/new-api:v1.0.4\nghcr.io/like5-ux/new-api:latest\n```\n\n支持 linux/amd64 与 linux/arm64。镜像发布后需在部署环境拉取新镜像并重新创建容器。\n\n## 验证\n\n- 前端受影响测试 54 项通过，类型检查、生产构建和变更文件 lint/格式检查通过。\n- 后端 vet/build、独立 relaykit 验证、模型与供应商隐私、流式/WebSocket、任务提交回归通过。\n- SQLite 3.50.4、MySQL 8.4.11、PostgreSQL 16.14 实库验证通过。\n- 全仓前端 lint 仍有 154 项既有错误，不在本次改动文件内。\n",
+    "published_at": "2026-10-29T16:49:49Z",
+    "prerelease": false,
+    "draft": false
+  },
+  {
+    "tag_name": "v1.0.3",
+    "name": "v1.0.3",
+    "body": "## 版本内容\n\n- 同步作者 `QuantumNous/new-api` 最新 `main` 的 41 个提交。\n- 保留模型监控、用户错误遮蔽、签到额度展示等全部二开功能。\n- 保留上游 SSE 保活与写入错误处理，并合并二开错误遮蔽逻辑。\n- 修复模型监控测试在严格类型检查下的 mock 参数类型。\n\n## 升级\n\n下载对应平台二进制并替换现有程序，重启服务即可。Linux amd64 使用 `new-api-v1.0.3`，ARM64 使用 `new-api-arm64-v1.0.3`。",
+    "published_at": "2026-10-25T11:51:11Z",
+    "prerelease": false,
+    "draft": false
+  },
+  {
+    "tag_name": "v1.0.2",
+    "name": "v1.0.2",
+    "body": "",
+    "published_at": "2026-10-21T17:25:35Z",
+    "prerelease": false,
+    "draft": false
+  },
+  {
+    "tag_name": "v1.0.1",
+    "name": "v1.0.1",
+    "body": "",
+    "published_at": "2026-10-20T12:18:09Z",
+    "prerelease": false,
+    "draft": false
+  },
+  {
+    "tag_name": "v1.0.0",
+    "name": "v1.0.0",
+    "body": "",
+    "published_at": "2026-10-20T11:42:15Z",
+    "prerelease": false,
+    "draft": false
+  }
+]
